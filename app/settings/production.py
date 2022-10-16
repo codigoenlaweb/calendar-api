@@ -9,7 +9,7 @@ ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=['*']))
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': env.str('NAME_DB'),
         'USER': env.str('USER_DB'),
         'PASSWORD': env.str('PASSWORD_DB'),
@@ -22,7 +22,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR.parent, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR.parent, 'stacticfiles/static')
 STATICFILES_DIRS = (os.path.join(BASE_DIR.parent, 'static'),)
 
 # email
