@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "calendar-api"
+version = "0.1.0"
+description = ""
+authors = ["codigoenlaweb <codeenlaweb@gmail.com>"]
+readme = "README.md"
+packages = [{include = "calendar_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "3.2.16"
+django-environ = "^0.9.0"
+djangorestframework = "^3.14.0"
+psycopg2-binary = "^2.9.4"
+dj-database-url = "^1.0.0"
+mysqlclient = "^2.1.1"
+dj-rest-auth = "^2.2.5"
+djangorestframework-simplejwt = "^5.2.1"
+django-allauth = "^0.51.0"
+whitenoise = {extras = ["brotli"], version = "^6.2.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
