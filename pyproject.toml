@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["codigoenlaweb <codeenlaweb@gmail.com>"]
 readme = "README.md"
-packages = [{include = "calendar_api"}]
 
 [tool.poetry.dependencies]
 python = "^3.7"
