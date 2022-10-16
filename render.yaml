@@ -1,7 +1,7 @@
 databases:
   - name: calendar-api
-    databaseName: calendar-api
-    user: calendar-api
+    databaseName: calendar_api
+    user: calendar_api
 
 services:
   - type: web
