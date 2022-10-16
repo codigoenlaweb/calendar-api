@@ -169,6 +169,7 @@ optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
+cryptography = {version = ">=3.3.1", optional = true, markers = "extra == \"crypto\""}
 django = "*"
 djangorestframework = "*"
 pyjwt = ">=1.7.1,<3"
@@ -374,7 +375,7 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "0c616463190508f614dcaabda5c0ada13bcfcd799b7060a8830eb8117db4cbd9"
+content-hash = "30b2b02f936ea3c5f929fbd75bbe95c220cc70e7fbc40d5d0cb4a4b70702a4fd"
 
 [metadata.files]
 asgiref = [
