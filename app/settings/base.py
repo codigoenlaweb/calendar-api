@@ -26,6 +26,7 @@ BASE_APPS = [
 
 LOCAL_APPS = [
     'modules.users',
+    'modules.events',
 ]
 
 THIRD_APPS = [
@@ -101,6 +102,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ),
+    'NON_FIELD_ERRORS_KEY': 'errors',
 }
 
 AUTHENTICATION_BACKENDS = [

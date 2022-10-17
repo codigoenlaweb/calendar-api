@@ -2,7 +2,7 @@ from django.db import transaction
 from rest_framework import serializers
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from modules.users.models import User
-
+from modules.events.serializers import EventSerializer
 
 class CustomRegisterSerializer(RegisterSerializer):
 
@@ -15,12 +15,14 @@ class CustomRegisterSerializer(RegisterSerializer):
 
 
 class CustomUserDetailsSerializer(serializers.ModelSerializer):
+    events = EventSerializer(many=True)
 
     class Meta:
         model = User
         fields = (
-            'pk',
+            'id',
             'email',
-            'username'
+            'username',
+            'events',
         )
-        read_only_fields = ('pk', 'email', 'email')
+        read_only_fields = ('id', 'email', 'email')
