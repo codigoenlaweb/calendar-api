@@ -17,7 +17,6 @@ class EventSerializer(serializers.ModelSerializer):
         """
         Check that the start is before the stop.
         """
-        print('aaaaaaaaa')
         if data['start'] >= data['end']:
             raise serializers.ValidationError(_("the start date must be less than the end date"))
         return data

@@ -16,4 +16,6 @@ class EventViewSet(viewsets.ModelViewSet):
         """
         Filter queryset to authenticated user.
         """
+        if not self.request.user.pk:
+            return self.queryset.filter(pk=0)
         return self.queryset.filter(user=self.request.user).order_by('-id')

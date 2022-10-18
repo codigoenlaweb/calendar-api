@@ -15,7 +15,7 @@ class CustomRegisterSerializer(RegisterSerializer):
 
 
 class CustomUserDetailsSerializer(serializers.ModelSerializer):
-    events = EventSerializer(many=True)
+    events = EventSerializer(many=True, read_only=True)
 
     class Meta:
         model = User
