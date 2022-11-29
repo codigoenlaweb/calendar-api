@@ -163,6 +163,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:8080",
     "http://127.0.0.1:3000",
+    "https://rt-calendar.netlify.app/",
+    "http://rt-calendar.netlify.app/",
 ]
 
 CORS_ORIGIN_WHITELIST = [
@@ -171,6 +173,8 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:5173",
     "http://localhost:8080",
     "http://127.0.0.1:3000",
+    "https://rt-calendar.netlify.app/",
+    "http://rt-calendar.netlify.app/",
 ]
 
 CORS_ALLOW_HEADERS = default_headers + ('token',)
