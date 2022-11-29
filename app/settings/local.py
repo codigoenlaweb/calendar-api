@@ -9,7 +9,7 @@ ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=['*']))
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': env.str('NAME_DB'),
         'USER': env.str('USER_DB'),
         'PASSWORD': env.str('PASSWORD_DB'),

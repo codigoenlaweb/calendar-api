@@ -1,6 +1,8 @@
 import os
 import environ
 from pathlib import Path
+from corsheaders.defaults import default_headers
+from datetime import timedelta
 
 env = environ.Env()
 
@@ -103,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'NON_FIELD_ERRORS_KEY': 'errors',
 }
@@ -121,11 +123,6 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'modules.users.serializers.CustomUserDetailsSerializer',
 }
-
-# AUTH JWT
-REST_USE_JWT = True
-JWT_AUTH_COOKIE = 'calendar-auth'
-# JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 
 # AUTH VERIEFIED EMAIL
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -157,6 +154,8 @@ AUTH_USER_MODEL = 'users.User'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
 # CORS
 CORS_ALLOWED_ORIGINS = [
     "https://example.com",
@@ -173,3 +172,5 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
     "http://127.0.0.1:3000",
 ]
+
+CORS_ALLOW_HEADERS = default_headers + ('token',)
